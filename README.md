@@ -9,21 +9,10 @@ The KrystalCode Drupal 8 Standards is a set of rules that builds on top of the [
 Similarly to [PSR-2](https://www.php-fig.org/psr/psr-2/#41-extends-and-implements), implements MUST be split across multiple lines IF the line length exceeds 80 characters.
 
 ```
-<?php
+// commerce_sheets/src/Plugin/QueueWorker/Import.php
 
-namespace Vendor\Package;
-
-use FooClass;
-use BarClass as Bar;
-use OtherVendor\OtherPackage\BazClass;
-
-class ClassName extends ParentClass implements
-    \ArrayAccess,
-    \Countable,
-    \Serializable {
-
-    // constants, properties, methods
-
+class Import extends QueueWorkerBase implements
+  ContainerFactoryPluginInterface {
 }
 ```
 
