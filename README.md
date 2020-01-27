@@ -1,5 +1,7 @@
 # Guidelines
 
+The KrystalCode Drupal 8 Standards is a set of rules that builds on top of the [Drupal 8 coding standards](https://www.drupal.org/docs/develop/standards). The main goal is to improve readability.
+
 ## Code structure
 
 ### Module files
