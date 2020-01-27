@@ -16,6 +16,27 @@ class Import extends QueueWorkerBase implements
 }
 ```
 
+### Methods
+
+Methods should be ordered based on their visibility i.e. public methods first, protected methods then and private methods at the end.
+
+```
+class MyClass {
+
+  public function myPublicFunction {
+
+  }
+
+  protected function myProtectedFunction {
+
+  }
+
+  private function myPrivateFunction {
+
+  }
+}
+```
+
 ### Method arguments
 
 Similarly to [PSR-2](https://www.php-fig.org/psr/psr-2/#44-method-arguments), the argument list MUST be split across multiple lines IF the line length exceeds 80 characters.
