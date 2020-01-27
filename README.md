@@ -61,7 +61,7 @@ public function __construct(
 
 ### Module files
 
-Breakdown your file into sections:
+If the module file grows large, break its content into sections:
 
 * Hooks
 * Callbacks
