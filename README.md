@@ -68,8 +68,6 @@ If the module file grows large, break its content into sections:
 * Public API - functions that constitute a Public API and may be used by other modules; they should remain unchanged for the same major version.
 * Functions for internal use - functions meant to be used only within the scope of the module and its submodules; they are not guaranteed to remain unchanged.
 
-#### Example
-
 ```
 <?php
 
