@@ -4,6 +4,12 @@ The KrystalCode Drupal 8 Standards is a set of rules that builds on top of the [
 
 ## Classes, properties and methods
 
+### Structure
+
+All files should be properly organized and fall under the proper directories. List Builders, Access Control Handlers and any other files that are loosely under the /src folder should be moved to a proper directory. 
+
+For example, the List Builder for an entity, should be moved to under, `/src/Entity/ListBuilder/MyEntity.php`
+
 ### Extends and implements
 
 Similarly to [PSR-2](https://www.php-fig.org/psr/psr-2/#41-extends-and-implements), implements MUST be split across multiple lines IF the line length exceeds 80 characters.
