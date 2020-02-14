@@ -80,6 +80,25 @@ public function __construct(
 
 ## Code structure
 
+### Use statments
+
+Group `use` statements as follows:
+
+- Custom/contrib modules
+- Core modules
+- Php base modules
+
+ie. 
+
+```
+use Drupal\my_module\Entity;
+use Drupal\commerce_product\Entity;
+
+use Drupal\Core\User;
+
+use Symfony\Component\DependencyInjection\ContainerInterface;
+```
+
 ### Module files
 
 If the module file grows large, break its content into sections:
