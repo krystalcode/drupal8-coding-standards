@@ -88,8 +88,6 @@ Group `use` statements as follows:
 - Core modules
 - Php base modules
 
-ie. 
-
 ```
 use Drupal\my_module\Entity;
 use Drupal\commerce_product\Entity;
