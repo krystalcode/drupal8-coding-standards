@@ -2,6 +2,63 @@
 
 The KrystalCode Drupal 8 Standards is a set of rules that builds on top of the [Drupal 8 coding standards](https://www.drupal.org/docs/develop/standards). The main goal is to improve readability.
 
+## Declare statements, namespace, and import statements
+
+### Import statements
+
+Similarly to [PSR-12](https://www.php-fig.org/psr/psr-12/#3-declare-statements-namespace-and-import-statements), `use` import statements MUST be grouped in blocks that are ordered in the following sequence:
+* Class-based `use` import statements.
+* Function-based `use` import statements.
+* Constant-based `use` import statements.
+
+All statements within each group SHOULD be listed in alphabetical order.
+
+```
+use Vendor\Package\AnotherNamespace\ClassE as E;
+use Vendor\Package\{ClassA as A, ClassB, ClassC as C};
+use Vendor\Package\SomeNamespace\ClassD as D;
+
+use function Another\Vendor\functionD;
+use function Vendor\Package\{functionA, functionB, functionC};
+
+use const Another\Vendor\CONSTANT_D;
+use const Vendor\Package\{CONSTANT_A, CONSTANT_B, CONSTANT_C};
+```
+
+If the number of lines in each block exceeds 5, `use` import statements MUST be further grouped in sub-blocks based on the provider of the imported item. The first breakdown SHOULD be as follows:
+* Drupal modules
+* Drupal core
+* External libraries
+
+```
+use Drupal\my_module\Entity\MyEntity;
+use Drupal\commerce_product\Entity\ProductInterface;
+use Drupal\user\UserInterface;
+
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Form\FormInterface;
+
+use Symfony\Component\DependencyInjection\ContainerInterface;
+```
+
+
+If the Drupal modules block grows large it SHOULD be further broken down as follows:
+* Custom modules
+* Contrib modules
+* Core modules
+
+```
+use Drupal\my_module\Entity\MyEntity;
+use Drupal\my_module\Entity\Storage\MyEntityStorageInterface;
+
+use Drupal\commerce_product\Entity\ProductInterface;
+use Drupal\commerce_product\Entity\ProductVariationInterface;
+use Drupal\commerce_order\Entity\OrderInterface;
+
+use Drupal\taxonomy\TermInterface;
+use Drupal\user\UserInterface;
+```
+
 ## Classes, properties and methods
 
 ### Extends and implements
