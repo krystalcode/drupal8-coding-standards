@@ -63,7 +63,7 @@ use Drupal\user\UserInterface;
 
 ### Extends and implements
 
-Similarly to [PSR-2](https://www.php-fig.org/psr/psr-2/#41-extends-and-implements), implements MUST be split across multiple lines IF the line length exceeds 80 characters.
+Similarly to [PSR-12](https://www.php-fig.org/psr/psr-12/#41-extends-and-implements), implements MUST be split across multiple lines IF the line length exceeds 80 characters.
 
 ```
 // commerce_sheets/src/Plugin/QueueWorker/Import.php
@@ -73,7 +73,7 @@ class Import extends QueueWorkerBase implements
 }
 ```
 
-### Methods
+### Methods and functions
 
 Methods should be ordered based on their visibility i.e. public methods first, protected methods then and private methods at the end.
 
@@ -94,9 +94,9 @@ class MyClass {
 }
 ```
 
-### Method arguments
+### Method and function arguments
 
-Similarly to [PSR-2](https://www.php-fig.org/psr/psr-2/#44-method-arguments), the argument list MUST be split across multiple lines IF the line length exceeds 80 characters.
+Similarly to [PSR-12](https://www.php-fig.org/psr/psr-12/#45-method-and-function-arguments), the argument list MUST be split across multiple lines IF the line length exceeds 80 characters.
 
 ```
 // commerce_sheets/src/Plugin/QueueWorker/Import.php
