@@ -4,9 +4,25 @@
 
 ### Performance
 
-### Reduce  number of fields/database tables
+Content architecture on a Drupal application can affect performance, and that includes field architecture. Fields can be reused on different bundles that belong to the same entity type, and reusing fields results in a smaller number of database tables - as discussed in the next section. Whether it is more performant to consolidate records in fewer tables or to spread them across more tables depends on the specific queries that will be issued against those tables. However, as a general recommendation, it is better to keep the number of tables small to prevent massive `JOIN` queries, for example, when using `Views`.
+
+This guideline proposes a naming convention system that maximizes field reusability, thus reducing the number of database tables and improving performance in the majority of cases.
+
+### Reduce number of fields/database tables
+
+Every time a field with a new machine name is added, Drupal will create a new database table for the field. It is not uncommon for Drupal applications to have a large number of content types (or other entity types with their bundles in general), each content type or entity bundle having a large number of fields. Imagine an application with 10-20 bundles of different entity types (content, products etc.) each bundle with 10-50 fields. Without a comprehensive guideline that maximizes field reusability that can result in literally hundreds of database tables, while only a few dozens of them might be actually necessary.
 
 ### Length
+
+The Drupal UI limits field machine names to a maximum of 32 characters. Additionally, the name of database table for the field is created by appending the machine name of the field to the ID of the entity type that the field belongs to, with the use of the `__` separator. The `_revision` is also used as a suffix of the entity type ID for the tables holding the revisions of a field. Add a potential prefix defined at the database level and applied to all tables (commonly enforced by shared hosting providers), and it becomes very common to exceed the limit of characters that a database table name can have.
+
+In such cases Drupal will use a unique hash to keep the database table name short. That, however, can cause confusion to Developers that may not fully understand how generating database tables works in Drupal, and it may make it difficult to find the table that holds the data for a field when inspecting data.
+
+By using the field type ID as the main component of a field's machine name, this guideline ensures that field names are kept short - as long as needed, as short as possible.
+
+### Developer experience
+
+The guideline also has the objective of improving the developer's experience while using the fields in code, and it proposes a system of using constants for taking advantage of text editor features such as auto-completion.
 
 ## Naming conventions
 
